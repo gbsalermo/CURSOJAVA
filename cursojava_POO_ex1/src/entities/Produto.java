@@ -7,6 +7,29 @@ public class Produto { // crio a classe produto
 	public double price;
 	public int quantity;
 	
+	//É possivel criar um construtor padrão
+	public Produto() {
+		
+	}
+	//Construtor(ele vem normalmente antes dos metodos), ele executa no momento da instaciação do objeto
+	public Produto(String name, double price, int quantity) {  // o construtor vai receber o nome, preço e quantidade
+		//uso o this para referenciar o atributo do objeto
+		this.name = name;//o segundo name é o parametro do construtor
+		this.price = price;
+		this.quantity = quantity;
+	}
+	//EXEMPLO DE SOBRECARGA
+	//Sobre carga é disponibilizar mais de uma versão da msm opeação
+	public Produto(String name, double price) { //A diferença está nos parametros
+		
+		this.name = name;
+		this.price = price;
+		
+		
+	}
+		
+	
+	
 	public double totalValueInStock() {//esse metodo não recebe parametros e por isso não há nada no parenteses
 		//faço o retorno do valor total em estoque, ou seja, preço x quantidade
 		return price * quantity;
@@ -26,7 +49,8 @@ public class Produto { // crio a classe produto
 	public String toString() { //Uma sobreposição ao objeto Produto
 		return name
 				+ ", $ "
-				+ String.format("%.2f", price)
+				+ String.format("%."
+						+ "2f", price)
 				+ ", "
 				+ quantity
 				+ " unit, Total: $"
