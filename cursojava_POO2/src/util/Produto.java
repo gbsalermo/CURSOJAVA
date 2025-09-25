@@ -5,7 +5,8 @@ public class Produto {
 	//PRODUTO ENCAPSULAMENTO
 
 	
-		private String name; 
+		//private String name; 
+		String name; // Quando não há nada, o membro só pode ser acessado no mesmo pacote
 		private double price;
 		private int quantity;
 		
@@ -14,12 +15,13 @@ public class Produto {
 			
 		}
 		
-		public Produto(String name, double price, int quantity) { 
+		/* exemplo construtor, get/sets e sobrecarga
+public Produto(String name, double price, int quantity) { 
 			this.name = name;
 			this.price = price;
 			this.quantity = quantity;
 		}
-		//EXEMPLO DE SOBRECARGA
+		/*EXEMPLO DE SOBRECARGA E GET/SET
 		public Produto(String name, double price) { //A diferença está nos parametros
 			
 			this.name = name;
@@ -44,10 +46,44 @@ public class Produto {
 		public double getQuantity() { //Crio apenas um get para proteger a integridade do estoque, ja que a quantidade depende da adição e exclusão de itens
 			return quantity;
 		}
+		*/
 		
+		//Construtor automatico (Bot. direi. -> Source -> Generate constructor using fields)
+		public Produto(String name, double price, int quantity) {
+			//super(); Por ser uma classe comum, não necessita do super();
+			this.name = name;
+			this.price = price;
+			this.quantity = quantity;
+		}
+		//sobrecarga
+		public Produto(String name, double price) {
+			//super(); Por ser uma classe comum, não necessita do super();
+			this.name = name;
+			this.price = price;
+		}
+		
+		//get e set gerados automaticamente
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public double getPrice() {
+			return price;
+		}
+
+		public void setPrice(double price) {
+			this.price = price;
+		}
+
 		public double totalValueInStock() {
 			return price * quantity;
 		}
+		
+
 		public void addProducts(int quantity) { 
 			this.quantity += quantity; 
 		}
