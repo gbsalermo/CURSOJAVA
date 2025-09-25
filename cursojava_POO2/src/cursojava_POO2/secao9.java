@@ -35,9 +35,7 @@ public interface secao9 {
 		*/
 
 		
-		
-		
-		
+	/* USO DE SET E GET	
 		System.out.println("Dados do produto: ");
 		System.out.println("Nome: ");
 		String name = sc.nextLine(); //Peço o name
@@ -65,7 +63,7 @@ public interface secao9 {
 		System.out.println();
 		System.out.println("Atualização: " + produto);
 		
-		
+		*/
 
 		
 		
