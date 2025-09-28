@@ -7,15 +7,24 @@ public class Conta {
 	//private double dpi; //Deposito inicial
 	private double saldo; //Saldo 
 	
-	public Conta() { //construtor padrão
+	public Conta(int num, String name) {
 		
+		this.num = num;
+		this.name = name;
 	}
-
-	public Conta(int num, String name, double saldo) { //Construtor para cada variavel
+	
+	public Conta(int num, String name, double IniDeposito) {
+		this.num = num;
+		this.name = name;
+		Deposito(IniDeposito); //Aqui eu chamo a operação de deposito, passando como argumento e protegendo o construtor no futuro
+	}
+	
+	/* Como eu fiz
+	 * public Conta(int num, String name, double saldo) { //Construtor para cada variavel
 		this.num = num;
 		this.name = name;
 		this.saldo = saldo;
-	}
+	}*/
 
 	//Encapsulamento
 	public String getName() { 
