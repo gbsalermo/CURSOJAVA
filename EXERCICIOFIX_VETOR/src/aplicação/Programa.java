@@ -9,8 +9,9 @@ public class Programa {
 		
 		Scanner sc = new Scanner(System.in);//crio o Scanner
 		//Programa que leia N numeros positivos e N inteiiros e diga quantos são negativos
+		/*MINHA VERSÃO
 		//EXPLICAÇÃO RAPIDA SOBRE OS ":" UTILIZADO NO SEGUNDO FOR DO CODIGO
-		// -> ELE BASICAMENTE É CHAMADO DE FOR APRIMORADO, E BASICAMENTE PEGA VALORES DE UM TIPO DENTRO DE ARRAY(NESSE CASO VETOR)
+		// -> ELE BASICAMENTE É CHAMADO DE FOR APRIMORADO, E PEGA VALORES DE UM TIPO DENTRO DE ARRAY(NESSE CASO VETOR)
 		// -> NO CASO, "para cada número inteiro v dentro do array vetor, execute o que está dentro do bloco."
 		
 		System.out.println("Quantos números você vai digitar? "); //PERGUNTO QUANTOS NUMEROS
@@ -34,12 +35,33 @@ public class Programa {
 			}
 			
 		else {
-			System.out.println("Quantidade não suportada, reinicie o sistema!");
+			System.out.println("Quantidade não suportada, reinicie o sistema!"); //Caso o usuario digita um valor maior que 10
 		}
+		*/
+		/*VERSÃO DO PROFESSOR
+		//ELE NÃO LIMITA A QUANT DE NUMEROS E TAMBÉM UTILIZA UMA FORMA MAIS SIMPLES PRA IMPRESSÃO DOS NEGATIVOS
 		
+		int n; //DECLARA A VARIAVEL
 		
+		System.out.print("Quantos numeros voce vai digitar? ");
+	    n = sc.nextInt();//ACOPLA A QUANT EM N
+
+	    int[] vetor = new int[n]; //ACOPLA N AO VETOR
+
+	    for (int i=0; i<n; i++) { //CRIA O LAÇO
+	    	System.out.print("Digite um numero: ");
+	        vetor[i] = sc.nextInt(); //PEGA OS VALORES E PÕE NO VETOR
+	    }
+
+	    System.out.println("NUMEROS NEGATIVOS:"); //O PRINT DO NEGATIVO VEM ANTES PARA IMPRIMIR SO UMA VEZ
+
+	    for (int i=0; i<n; i++) { //LAÇO DE VERIFICAÇÃO
+	        if (vetor[i] < 0) { //IF PARA CASO OS VALORES NO VETOR FOR MENOR QUE 0
+	        	System.out.printf("%d\n", vetor[i]);//IMPRIME OS VALORES
+	        }
+	    }
 		
-		
+		*/
 		
 		
 		
