@@ -38,7 +38,7 @@ public class Programa {
 			System.out.println("Quantidade não suportada, reinicie o sistema!"); //Caso o usuario digita um valor maior que 10
 		}
 		*/
-		/*VERSÃO DO PROFESSOR
+		/*VERSÃO DO PROFESSOR - Exercicio N numeros inteiros
 		//ELE NÃO LIMITA A QUANT DE NUMEROS E TAMBÉM UTILIZA UMA FORMA MAIS SIMPLES PRA IMPRESSÃO DOS NEGATIVOS
 		
 		int n; //DECLARA A VARIAVEL
@@ -62,10 +62,33 @@ public class Programa {
 	    }
 		
 		*/
+		//PROGRAMA QUE LEIA N VALORES, IMPRIMA, MOSTRE A SOMA E A MEDIA
 		
+		System.out.println("Quantos números você vai digitar? ");
+		int n = sc.nextInt();
 		
+		double[] vetor = new double[n]; //Acopla N ao vetor
 		
+		for (int i = 0; i < n; i++) {
+			System.out.println("Digite um número: "); //peço os valores
+			vetor[i] = sc.nextDouble(); //adiciono ao vetor
+		}
 		
+		double soma = 0; //declaro a variavel soma como 0
+		for(int i = 0; i<n; i++) { //crio o segundo for
+			soma += soma + vetor[i]; //ele vai somando cada valor do vetor
+		}
+		
+		double media = soma / n; //crio a variavel media que divide o valor total de soma por n
+		
+		System.out.println("VALORES: "); //crio um print para informar os valores
+		
+		for(int i = 0; i < n; i++) { //crio o terceiro for para imprimir os valores digitados
+			System.out.printf("%.1f ", vetor[i]);
+		}
+		
+		System.out.printf("\nSOMA = %.2f\n", soma); //imprimo soma
+	    System.out.printf("MEDIA = %.2f\n", media); //imprimo a media
 		
 		
 		
