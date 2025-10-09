@@ -1,5 +1,5 @@
 package aplicação;
-
+import util.Pessoa;
 import java.util.Scanner;
 
 public class Programa {
@@ -62,7 +62,7 @@ public class Programa {
 	    }
 		
 		*/
-		//PROGRAMA QUE LEIA N VALORES, IMPRIMA, MOSTRE A SOMA E A MEDIA
+		/*PROGRAMA QUE LEIA N VALORES, IMPRIMA, MOSTRE A SOMA E A MEDIA
 		
 		System.out.println("Quantos números você vai digitar? ");
 		int n = sc.nextInt();
@@ -89,8 +89,51 @@ public class Programa {
 		
 		System.out.printf("\nSOMA = %.2f\n", soma); //imprimo soma
 	    System.out.printf("MEDIA = %.2f\n", media); //imprimo a media
+		*/
+		//Programa que ler nome/idade/altura de n pessoas, depois mostrar altura media e porcentagem das pessoas com -16
 		
 		
+		System.out.println("Quantas pessoas? ");
+		int n = sc.nextInt();
+		sc.nextLine();
+		
+		Pessoa[] vetor = new Pessoa[n]; //Crio o vetor na classe pessoa
+		
+		for (int i = 0; i < n; i++ ) {
+			System.out.println("Dados da " + (i+1) + "a pessoa:");
+			System.out.println("nome: ");
+			String nome = sc.nextLine();
+			System.out.println("Altura: ");
+			double altura = sc.nextDouble();
+			sc.nextLine();
+			System.out.println("Idade: ");
+			int idade = sc.nextInt();
+			vetor[i] = new Pessoa(nome, altura, idade);
+			sc.nextLine();
+		}
+		
+		double alt = 0.0;
+		double menor = 0.0;
+		
+		for(int i = 0; i < n; i++ ) {
+			
+			 alt += vetor[i].getAltura();
+			 if (vetor[i].getIdade() < 16) {
+			 menor ++; //adiciona os de menor a variavel porc
+		}
+		}
+
+		
+		double md = alt / n;
+		double porc = ((double) menor / n) * 100;
+		System.out.printf("Altura media:%.2f%n", md);
+		System.out.printf("Pessoas com menos de 16 anos: %.1f%%\n ", porc);
+		
+		for(int i = 0; i < n; i++) {
+			if(vetor[i].getIdade() < 16) {
+				System.out.printf("%s\n", vetor[i].getNome());
+			}
+		}
 		
 		sc.close();
 	}
