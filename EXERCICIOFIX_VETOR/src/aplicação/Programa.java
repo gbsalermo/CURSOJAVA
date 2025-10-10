@@ -90,7 +90,7 @@ public class Programa {
 		System.out.printf("\nSOMA = %.2f\n", soma); //imprimo soma
 	    System.out.printf("MEDIA = %.2f\n", media); //imprimo a media
 		*/
-		//Programa que ler nome/idade/altura de n pessoas, depois mostrar altura media e porcentagem das pessoas com -16
+		/*Programa que ler nome/idade/altura de n pessoas, depois mostrar altura media e porcentagem das pessoas com -16
 		
 		
 		System.out.println("Quantas pessoas? ");
@@ -134,6 +134,81 @@ public class Programa {
 				System.out.printf("%s\n", vetor[i].getNome());
 			}
 		}
+		*/
+		/*Numeros pares com vetor
+		
+		System.out.println("Quantos números voê vai digitar? "); //Peço a quant. de valores
+		int n = sc.nextInt(); //crio a variavel e acoplo nela o valor digitado
+		
+		int vetor[] = new int[n];//crio o vetor como int e acoplo seu tamanho n
+		
+		int t = 0; //Crio uma variável para todos os valores pares
+		for(int i = 0; i < n; i++) { //laço principal
+			System.out.println("Digite um número: "); //Peço os números
+			vetor[i] = sc.nextInt(); //pega os valores e põe no vetor
+		}
+		
+		System.out.println("Números pares: "); //imprimos que vou informar os números pares
+		for(int i = 0; i < n; i++) { // laço secundario
+		if( vetor[i] % 2 == 0) { //faço um condicional para encontrar os valores pares
+			System.out.printf("%d\n", vetor[i]); //imprimo os valores
+			t++; //adiciono os mesmos na variavel t de mais cedo
+		}}
+		System.out.println("Quantidade de pares = " + t); //Imprimo a quantidade total dos valores par
+		
+		*/
+		/*Maior valor e sua posição
+		
+		System.out.println("Quantos números você vai digitar? "); // Peço a quantidade de valores
+		int n = sc.nextInt(); //adiciono elas a variavel n
+		
+		double[] vetor = new double[n]; //Crio um vetor double e adiciono a ele o tamanho do vetor n
+		
+		int p = 0; //variavel de posição
+		double maior = 0.0;//variavel de maior
+		for(int i = 0; i < n; i++) { //loop para verificar os valores
+			System.out.println("Digite um numero: "); //peço os valores
+			vetor[i] = sc.nextDouble(); //adiciono no vetor
+			if(vetor[i] > maior) { //condicional para descobrir o maior
+				maior = vetor[i]; //adiciono o valor na variavel maior
+				p++; //a cada entrada na variavel adiciono 1 no p
+			}
+		}
+		System.out.println("MAIOR VALOR = " + maior); //imprimo o maior
+		System.out.println("POSIÇÃO DO MAIOR VALOR = " + p); //imprimo a posição dele
+		*/
+		/*soma de vetores
+		
+		System.out.println("Quantos valores serão digitados nos vetores? "); //peço a quantidade
+		int n = sc.nextInt(); //acoplo na variavel n
+		
+		int[] v1 = new int[n]; //crio o primeiro vetor
+		int[] v2 = new int[n]; //crio o segundo vetor
+		int[] v3 = new int[n]; //crio o terceiro vetor que fará a soma
+		
+		//Laço vetor 1
+		System.out.println("Digite os valores do vetor A: "); //Antes do loop faço o pedido dos valores(FOra do loop para nao ficar se repetindo)
+		for(int i = 0; i < n; i++) {//inicio
+			v1[i] = sc.nextInt();//acoplamento dos valores no vetor
+		}
+		//Laço vetor 2
+		System.out.println("Digite os valores do vetor B: "); //repito com o vetor2
+		for(int i = 0; i < n; i++) {
+			v2[i] = sc.nextInt();
+		}
+		//Laço vetor 3 para soma
+		for(int i = 0; i < n; i++) { //inicio
+			v3[i] = v1[i] + v2[i]; //somo os vetores 1 e 2, observe que uso vetor[i], para pegar cada valor em n separadamente
+		}
+		
+		System.out.println("Valor resultante: ");//informo fora do ultimo loop que irei mostrar a soma
+		//laço final
+		for(int i = 0; i < n; i++) {
+			System.out.printf("%d\n", v3[i] ); //imprimo valor por valor de v3(Note o uso novamente de vetor[i])
+		}
+		*/
+		
+		
 		
 		sc.close();
 	}
