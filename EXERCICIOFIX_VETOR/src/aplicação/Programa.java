@@ -207,8 +207,151 @@ public class Programa {
 			System.out.printf("%d\n", v3[i] ); //imprimo valor por valor de v3(Note o uso novamente de vetor[i])
 		}
 		*/
+		/*Problema abaixo da media
+		
+		System.out.println("Quantos elementos vai ter o vetor? ");
+		int n = sc.nextInt();
+		
+		double[] vetor = new double[n];
+		
+		for(int i = 0; i < n; i++) {
+			
+			System.out.println("Digite um numero: ");
+			vetor[i] = sc.nextDouble();
+		}
+		
+		double v = 0;
+		
+		for(int i = 0; i < n; i++) {
+			v += vetor[i];
+		}
+		
+		double m = v / n;
+		System.out.println("MEDIA DO VETOR = " + m);
+		
+		System.out.println("ELEMENTOS ABAIXO DA MÉDIA: ");
+		for( int i = 0; i < n; i++) {
+			if (vetor[i] < m) {
+				System.out.println(vetor[i]);
+			}
+		}
+		*/
+		/*MEDIA PARES
+		
+		System.out.println("Quantos elementos vai tero o vetor? ");
+		int n = sc.nextInt();
+		
+		double[] vet1 = new double[n];
+		int p = 0, v = 0;
+
+	
+		for(int i = 0; i < n; i++) {
+				System.out.println("Digite um número: ");
+				vet1[i] = sc.nextDouble();
+				if(vet1[i] % 2 == 0) {
+					v += 1;
+					p += vet1[i];
+				}
+			}
+		
+		if( p == 0) {
+			System.out.println("NENHUM NÚMERO PAR");
+		}
+		else {
+			double m = p / v;
+			System.out.println("Media dos pares = " + m);
+		}
+	*/
+		/*Pessoa mais velha
+		
+		System.out.println("Quantas pessoas você vai digitar? ");
+		int n = sc.nextInt();
+		
+		String[] nome = new String[n];
+		int[] idad = new int[n];
+		int maior = 0;
+		int p = 0;
+		for( int i = 0; i < n; i++) {
+			System.out.println("Dados da " + (i + 1) + "a pessoa:");
+			System.out.println("Nome: ");
+			nome[i] = sc.next();
+			System.out.println("Idade: ");
+			idad[i] = sc.nextInt();
+			if(idad[i] > maior) {
+				maior = idad[i];
+				p = i;
+				}
+				}
+		System.out.println("PESSOA MAIS VELHA: " + nome[p]);
+		*/
+		/*Aprovados
+		
+		System.out.println("Quantos alunos serão digitados? ");
+		int n = sc.nextInt();
+		
+		String[] nome = new String[n];
+		double[] n1 = new double[n];
+		double[] n2 = new double[n];
+
+		
+		for(int i = 0; i < n; i++) {
+			System.out.println("Digite o nome, primeira e segunda nota do " + (i + 1) + "o aluno:");
+			nome[i] = sc.next();
+			n1[i] = sc.nextDouble();
+			n2[i] = sc.nextDouble();
+		}
+		
+		System.out.println("Alunos aprovados:");
+		for(int i = 0; i < n; i++) {
+			if((n1[i] + n2[i])/2 > 6) {
+				System.out.printf("%s%n", nome[i]);
+		}}
+		*/
+		//Dados e pessoas
+		
+		System.out.println("Quantas pessoa serao digitadas? ");
+		int n = sc.nextInt();
+		
+		double[] alt = new double[n];
+		char[] gen = new char[n];
+		
+		double maior = 0, m = 0, qm = 0;
+		int qh = 0;
+		
+		for( int i = 0; i < n; i++) {
+			System.out.println("Altura da " + (i + 1) + "a pessoa:");
+			alt[i] = sc.nextDouble();
+			System.out.println("Genero da " + (i + 1) + "a pessoa:");
+			gen[i] = sc.next().charAt(0);
+		}
+			
+		double menor = alt[0];
+		for(int i = 0; i < n; i ++) {	
+			if(alt[i] > maior) {
+				maior = alt[i];			
+			}
+			if(alt[i] < menor) {
+				menor = alt[i];
+			}
+		}
 		
 		
+		for(int i = 0; i < n; i++) {
+			if(gen[i] == 'm') {
+				qh++;
+			}
+			else {
+				qm++;
+				m += alt[i];
+			}
+		}
+		
+		double media = m/ qm;
+		
+		System.out.printf("menor altura = %.2f%n", menor);
+		System.out.printf("Maior altura = %.2f%n", maior);
+		System.out.printf("Media das alturas das mulheres = %.2f%n", media);
+		System.out.println("Numero de homens = " + qh);
 		
 		sc.close();
 	}
