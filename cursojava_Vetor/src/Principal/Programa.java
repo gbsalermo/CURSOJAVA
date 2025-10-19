@@ -1,13 +1,13 @@
 package Principal;
 
 import java.util.Scanner;
-import Entities.Produto;
+import Entities.Produto; //produto
 
 public interface Programa {
 	public static void main(String[] ags) {
 		
 		Scanner sc = new Scanner(System.in);
-		
+		/* teste produto com vetor
 		System.out.println("Quantos produtos vão ser? ");
 		int n = sc.nextInt();
 		
@@ -33,6 +33,50 @@ public interface Programa {
 		System.out.printf("Media do preço: %.2f%n", avg);
 		
 		sc.close();
-	}
+	}*/
 
+		/*Boxing, unboxing e wrapper classes
+		
+		//Ex. Boxing
+		
+		int x = 20; //Crio a variavel no Stack
+		
+		Object obj = x; //Passo o valor de x para o Heap "Encaixotando ele
+		
+		System.out.println(obj); //impressão do valor de obj
+		
+		//Ex. Unboxing
+		
+		
+		Object obj1 = x; //Criei outro objeto
+		
+		int y = (int) obj1; //passo ele para a variavel y qye esta no Stack
+		
+		//Ex. Wrapper
+		
+		Integer obj2 = x; //N preciso declarar como objeto e posso declarar direto como int com o integer
+		
+		int z = obj2; //nesse caso nao preciso declarar (int) antes do obj 2
+		*/
+		
+		/*Ex. for each
+		
+		String[] vect = new String[] {"Maria", "Bob","Alex"}; //Ja instancio os valores
+		
+		//for normal
+		for( int i = 0; i < vect.length; i++) {
+			System.out.println(vect[i]);
+		}
+		
+		//agora laço for each
+		
+		//Esse laço se ler: Para cada objeto obj contido no vetor vect faça(no caso ta imprimindo)
+		for(String obj : vect) {
+			System.out.println(obj);
+		}
+		
+		*/
+		
+		sc.close();		
+}
 }

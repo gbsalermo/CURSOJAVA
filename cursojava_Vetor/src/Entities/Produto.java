@@ -2,9 +2,15 @@ package Entities;
 
 public class Produto {
 	
-	//variaveis
+	/*atributos
 	private String name;
-	private double price;
+	private double price;*/
+	
+	//atributos com wrapper	
+	public String name;
+	public Double price;
+	public Integer quantity;
+
 	
 	//construtor
 	public Produto(String name, double price) {
@@ -27,5 +33,6 @@ public class Produto {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
 
 }
