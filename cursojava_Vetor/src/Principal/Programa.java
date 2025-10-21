@@ -1,7 +1,8 @@
 package Principal;
 
+import java.util.ArrayList;
+import java.util.List; //importo biblioteca List
 import java.util.Scanner;
-import Entities.Produto; //produto
 
 public interface Programa {
 	public static void main(String[] ags) {
@@ -77,6 +78,41 @@ public interface Programa {
 		
 		*/
 		
+		/*Listas
+		
+		List  <Integer> list = new ArrayList<>(); //Aqui crio uma lista chamada list declarando ela como inteira dentro do <> e instancio com a classe ArrayList
+		
+		list.add(1); //list.add serve para adicionar valores
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		
+		list.add(2, 7); //Aqui eu adiciono um valor na posição 2(Lembre-se que a contagem começa com 0, a possição 2 seria a 3 pra ide)
+		
+		System.out.println(list.size()); //Tamanho da lista
+		
+		list.remove(4);//list.remove feito para remover
+		list.removeIf(x -> x.equals(list) == 7); //Aqui eu removo de acordo com um predicado
+		//Exemplo do professor para String
+		//list.removeif(x -> x.charAt(0) == "M");
+		System.out.println("Index of 2" + list.indexOf(2)); // para printar a posição do elemento, se o elemento nao existir ele retorna -1
+		
+		for (Integer x : list) { //Uso for each para percorrer a lista
+			System.out.println(x);
+		}
+		
+		//Pegar a lista e filtrar por uma regra
+		//ex pra String
+		//List<String> result = list.Stream().filter(x -> x.charAt(0) == "A").collect(Collector.toList());
+		//list.stream() sou eu convertendo ele para stream
+		//filter(x -> x.charAt(0) == "A" operação lambada
+		//collect(Collector.toList()) retorno para lista
+		
+		//ex de como encontrar um elmento especifico na list
+		//String name = list.stream().filter(x -> x.charAt(0) == "A").findFirst().orElse(null)
+		//findFirst() pega o primeiro elemento
+		//orElse(null) caso o elemento nao exista ele retorna nulo 
+		*/
 		sc.close();		
 }
 }
