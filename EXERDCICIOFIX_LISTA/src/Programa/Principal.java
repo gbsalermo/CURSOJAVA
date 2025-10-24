@@ -10,6 +10,7 @@ public class Principal {
 		
 		Scanner sc = new Scanner(System.in);
 		
+	/*EXERCICIO LISTA
 		System.out.println("Quantos funcionarios? ");
 		int n = sc.nextInt();
 		
@@ -53,13 +54,44 @@ public class Principal {
 			System.out.println(fun);
 		}
 		
+	*/	
 		
+	//EXERCICIO MATRIZ
+	
+		int n = sc.nextInt(); //receber um inteiro
+		int[][] mat = new int[n][n]; //O int[][] demonstra que é uma matriz
+		
+		//Como a matriz mat recebe n, posso trocar o n da linha nos for pelo mat.length
+		//Ex. for(int i = 0; i < mat.lenght; i++) { 
+		for(int i = 0; i < n; i++) { //for para cada Linha
+			//Ja no caso de coluna posso por no lugar de n mat[i].length
+			//Ex. for (int j = 0; j <mat[i].length; j++) {
+			for (int j = 0; j <n; j++) {//for para cada coluna
+				mat[i][j] = sc.nextInt(); //aqui informo o que cada um vai receber
+			}
+			}
+		
+		System.out.println("Diagonal principal: ");
+		for( int i = 0; i<n; i++) {
+			System.out.println(mat[i][i] + " ");
+		}
+		System.out.println();
+		
+		int count = 0;
+		for(int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				if(mat[i][j] < 0) {
+					count++;
+				}
+			}
+		}
+		System.out.println("Numeros negativos = " + count);
 		
 		sc.close();
 		
 	}
 
-	//Crio uma função auxiliar para buscar o funcionario
+	/*Crio uma função auxiliar para buscar o funcionario
 	
 	public static Integer position(List<funcionario> list, int id) {
 		for(int i = 0; i < list.size(); i++) { //uso o list.size() Como N aqui
@@ -73,5 +105,6 @@ public class Principal {
 	public static boolean hasId(List<funcionario> list, int id) {
 		funcionario fun = list.stream().filter(x -> x.getId() == id). findFirst().orElse(null);
 		return fun != null;
-	}
+	}*/
+	
 }
