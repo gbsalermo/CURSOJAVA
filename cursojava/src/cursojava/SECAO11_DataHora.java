@@ -3,7 +3,7 @@ package cursojava;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.ZoneId;
 import java.util.Scanner;
 
 
@@ -13,7 +13,7 @@ public interface SECAO11_DataHora {
 	public static void main(String[] ags) {
 		
 		Scanner sc = new Scanner(System.in);
-		
+		/*DATAS E HORAS
 		//Link da classe LocalDate
 		//https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
 	
@@ -68,7 +68,88 @@ public interface SECAO11_DataHora {
 		System.out.println("d9 = " + d9.toString());
 		System.out.println("d10 = " + d10.toString());
 		System.out.println("d11 = " + d11.toString());
+		
+		*/
+		/*CONVERTENDO DATA-HORA PARA TEXTO
+		
+		
+		//USANDO EXEMPLOS ANTERIORES
+		LocalDate d4 = LocalDate.parse("2025-10-30");
+		LocalDateTime d5 = LocalDateTime.parse("2025-10-30t10:13:30");
+		Instant d6 = Instant.parse("2025-10-30t10:13:30Z");
+		
+		
+		DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyy");
+		
+		//posso chamar de três formas
+		System.out.println("d4 =" + d4.format(fmt1));
+		System.out.println("d4 =" + fmt1.format(d4));
+		System.out.println("d4 = " + d4.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		
+		//formatar localDateTime
+		DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm");
+
+		//posso chamar
+		System.out.println("d5 =" + d5.format(fmt1));
+		System.out.println("d5 = " + d5.format(fmt2));
+		
+		//Agora formatar Instant
+		//a função (ZoneId.systemDefault() usa o fuso horario do sistema local
+		//é necessario especificar o fuso horario em horarios assim
+		DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm").withZone(ZoneId.systemDefault());
+
+		//posso chamar
+		System.out.println("d6 =" + fmt3.format(d6));
+		
+		//existem outros padrões no site datetime
+		//ex:
+		DateTimeFormatter fmt4 = DateTimeFormatter.ISO_DATE_TIME;
+		
+		//chamando
+		
+		System.out.println("d5 =" + d5.format(fmt4)); 
+
+		// não tem como fazer com fmt4.format(d5) em instante, pois o iso_date nao tem fuso horario
+		//nesse caso podemos usar
+		
+		DateTimeFormatter fmt5 = DateTimeFormatter.ISO_INSTANT;
+		System.out.println("d6 =" + fmt5.format(d6)); 
+		//da pra fazer d6.toString() tambem
+
+
+		*/
+		//Convertendo data-hora global para local
+		
+		LocalDate d4 = LocalDate.parse("2025-11-04");
+		LocalDateTime d5 = LocalDateTime.parse("2025-11-04T00:24:00");
+		Instant d6 = Instant.parse("2025-11-04T00:25:00Z");
+		
+		//Converter em uma localdate
+		
+		//ZoneId.systemDefault() Aqui ele considera o fuso horario do meu computador
+		LocalDate r1 = LocalDate.ofInstant(d6, ZoneId.systemDefault());
+		LocalDate r2 = LocalDate.ofInstant(d6, ZoneId.of("Portugal"));
+		LocalDateTime r3 = LocalDateTime.ofInstant(d6, ZoneId.systemDefault());
+		LocalDateTime r4 = LocalDateTime.ofInstant(d6, ZoneId.of("Portugal"));
+		
+		System.out.println("r1 = " + r1);
+		System.out.println("r2 = " + r2);
+		System.out.println("r3 = " + r3);
+		System.out.println("r4 = " + r4);
+		
+		//Imprimindo dia, mes e ano
+		
+		System.out.println("d4 dia = " + d4.getDayOfMonth());
+		System.out.println("d4 mês = " + d4.getMonthValue());
+		System.out.println("d4 ano = " + d4.getYear());
+		System.out.println("d5 hora = " + d5.getHour());
+		System.out.println("d5 minuto = " + d5.getMinute());
+		
+		
+		
 		sc.close();
+		
+		
 		
 	}
 }
