@@ -1,0 +1,45 @@
+package Application;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+import model.entities.Reservation;
+
+public class Program {
+	public static void main(String[] ags) throws ParseException {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+		
+		System.out.println("Room number: ");
+		int number = sc.nextInt();
+		System.out.println("Check-in date (dd/MM/yyyy): ");
+		Date checkIn = sdf.parse(sc.next());
+		System.out.println("Check-out date (dd/MM/yyyy): ");
+		Date checkOut = sdf.parse(sc.next());
+		
+		
+		//testando se a data de checkOut é inferior a de checkIn
+		
+		if( !checkOut.after(checkIn)) {
+			System.out.println("Error inreservation: Check-out date must be after check-in date ");
+		}
+		else {
+			Reservation reservation = new Reservation(number, checkIn, checkOut);
+			System.out.println("Reservation: " + reservation);
+		}
+		
+		
+		
+		
+		
+		
+		sc.close();
+		
+	}
+
+}
